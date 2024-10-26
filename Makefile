@@ -7,5 +7,7 @@ generate:
 	docker compose run --rm $(SERVICE) generate \
 	-i /local/openapi.yaml \
 	-g scala-play-server \
-	-o /local/out/play-scala \
-	-t /local/openapi/generator
+	--model-package adapter.json \
+	--global-property models \
+	-o /local \
+	-t /local/openapi/generator \
