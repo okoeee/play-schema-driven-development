@@ -10,9 +10,15 @@ servers:
   - url: http://localhost:9000
     description: ローカル開発環境
 
+tags:
+  - name: user
+    description: ユーザーAPI
+
 paths:
   /api/v1/users:
     get:
+      tags:
+        - user
       summary: ユーザー一覧取得
       description: ユーザー一覧の取得
       responses:
@@ -24,6 +30,32 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+    post:
+      tags:
+        - user
+      summary: ユーザー登録
+      description: ユーザーの登録
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: ユーザー登録成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      tags:
+        - user
+      summary: ユーザー削除
+      description: ユーザーの削除
+      responses:
+        '204':
+          description: ユーザー削除成功
 
 components:
   schemas:
