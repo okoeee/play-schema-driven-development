@@ -1,0 +1,7 @@
+
+services:
+  openapi-generator:
+    image: openapitools/openapi-generator-cli:latest
+    container_name: openapi-generator
+    volumes:
+      - ./:/local
