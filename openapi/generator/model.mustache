@@ -1,4 +1,4 @@
-package json.model
+package {{package}}
 
 import play.api.libs.json._
 {{#imports}}
@@ -17,7 +17,6 @@ import {{import}}
   * @param additionalProperties Any additional properties this model may have.
   {{/isMap}}
   */
-{{>generatedAnnotation}}
 {{^isArray}}
 {{>caseClass}}
 {{/isArray}}
