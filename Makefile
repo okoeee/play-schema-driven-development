@@ -1,13 +1,18 @@
 
-SERVICE=openapi-generator
-
 .PHONY: bundle generate
 
 bundle:
-	docker run --rm -v ./:/local redocly/cli bundle /local/openapi/openapi.yaml -o /local/openapi/bundled.yaml
+	docker run \
+	--rm \
+	-v ./:/local \
+	redocly/cli bundle /local/openapi/openapi.yaml \
+	-o /local/openapi/bundled.yaml
 
 generate:
-	docker compose run --rm $(SERVICE) generate \
+	docker run \
+	--rm \
+	-v ./:/local \
+	openapitools/openapi-generator-cli generate \
 	-i /local/openapi/bundled.yaml \
 	-g scala-play-server \
 	--model-package adapter.json \
