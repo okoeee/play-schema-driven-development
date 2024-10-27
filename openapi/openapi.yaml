@@ -1,0 +1,19 @@
+
+openapi: 3.1.0
+
+info:
+  title: Play Schema Driven Development
+  version: 1.0.0
+  description: Play Framework スキーマ駆動開発サンプル
+
+servers:
+  - url: http://localhost:9000
+    description: ローカル開発環境
+
+tags:
+  - name: user
+    description: ユーザーAPI
+
+paths:
+  /api/v1/users:
+    $ref: './paths/user.yaml'

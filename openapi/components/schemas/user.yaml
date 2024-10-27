@@ -1,0 +1,33 @@
+User:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+      description: ユーザーID
+    name:
+      $ref: './user.yaml#/UserName'
+    email:
+      type: string
+      description: メールアドレス
+    age:
+      type: integer
+      format: int32
+      description: 年齢
+  required:
+    - id
+    - name
+    - email
+
+UserName:
+  type: object
+  properties:
+    firstName:
+      type: string
+      description: ユーザー名(姓)
+    lastName:
+      type: string
+      description: ユーザー名(名)
+  required:
+    - firstName
+    - lastName
