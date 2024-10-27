@@ -11,7 +11,7 @@ get:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/user.yaml#/user'
+              $ref: '../components/schemas/user.yaml#/User'
 post:
   tags:
     - user
@@ -22,14 +22,14 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/user.yaml#/user'
+          $ref: '../components/schemas/user.yaml#/User'
   responses:
     '201':
       description: ユーザー登録成功
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/user.yaml#/user'
+            $ref: '../components/schemas/user.yaml#/User'
 delete:
   tags:
     - user
